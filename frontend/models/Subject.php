@@ -1,0 +1,56 @@
+<?php
+
+namespace frontend\models;
+
+use Yii;
+
+/**
+ * This is the model class for table "subject".
+ *
+ * @property int $subjectId
+ * @property string $subjectName
+ *
+ * @property Students[] $students
+ */
+class Subject extends \yii\db\ActiveRecord
+{
+    /**
+     * {@inheritdoc}
+     */
+    public static function tableName()
+    {
+        return 'subject';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function rules()
+    {
+        return [
+            [['subjectName'], 'required'],
+            [['subjectName'], 'string', 'max' => 255],
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function attributeLabels()
+    {
+        return [
+            'subjectId' => 'Subject ID',
+            'subjectName' => 'Subject Name',
+        ];
+    }
+
+    /**
+     * Gets query for [[Students]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getStudents()
+    {
+        return $this->hasMany(Students::className(), ['subjectId' => 'subjectId']);
+    }
+}
