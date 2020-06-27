@@ -9,8 +9,6 @@ use Yii;
  *
  * @property int $subjectId
  * @property string $subjectName
- *
- * @property Students[] $students
  */
 class Subject extends \yii\db\ActiveRecord
 {
@@ -42,15 +40,5 @@ class Subject extends \yii\db\ActiveRecord
             'subjectId' => 'Subject ID',
             'subjectName' => 'Subject Name',
         ];
-    }
-
-    /**
-     * Gets query for [[Students]].
-     *
-     * @return \yii\db\ActiveQuery
-     */
-    public function getStudents()
-    {
-        return $this->hasMany(Students::className(), ['subjectId' => 'subjectId']);
     }
 }

@@ -42,15 +42,13 @@ AppAsset::register($this);
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
     } else {
         $menuItems = [
-            ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'About', 'url' => ['/site/about']],
+            ['label' => 'Dashboard', 'url' => ['/students/dashboard']],
             ['label' => 'Student', 'url' => ['/students/index']],
             ['label' => 'Teacher', 'url' => ['/teachers/index']],
             ['label' => 'Subject', 'url' => ['/subject/index']],
             ['label' => 'Students-Subjects', 'url' => ['/student-subject/index']],
             ['label' => 'Exam', 'url' => ['/exams/index']],
             ['label' => 'Result', 'url' => ['/results/index']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
         ];
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')

@@ -42,11 +42,11 @@ class Results extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'resultsId' => 'Results ',
-            'studentId' => 'Student ',
-            'teacherId' => 'Teacher ',
-            'subjectId' => 'Subject ',
-            'examId' => 'Exam',
+            'resultsId' => 'Results ID',
+            'studentId' => 'Student ID',
+            'teacherId' => 'Teacher ID',
+            'subjectId' => 'Subject ID',
+            'examId' => 'Exam ID',
             'totalMarks' => 'Total Marks',
         ];
     }

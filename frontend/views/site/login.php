@@ -10,6 +10,8 @@ use yii\bootstrap\ActiveForm;
 $this->title = 'Login';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
+
 <div class="site-login">
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -30,10 +32,20 @@ $this->params['breadcrumbs'][] = $this->title;
                     <br>
                     Need new verification email? <?= Html::a('Resend', ['site/resend-verification-email']) ?>
                 </div>
-
-                <div class="form-group">
+				<div class = "row">
+				  <div class = "col-md-3">
+				  	<div class="form-group">
                     <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
-                </div>
+                	</div>
+				  </div>
+				   <div class = "col-md-3">
+				   <?= Html::a('Back', ['/site/index'], ['class'=>'btn btn-success grid-button']) ?>
+				  </div>
+				</div>
+                
+               
+				
+                
 
             <?php ActiveForm::end(); ?>
         </div>

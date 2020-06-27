@@ -21,6 +21,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'admissionNumber') ?>
 
+    <?= $form->field($model, 'birthCertificateNumber') ?>
+
+    <?= $form->field($model, 'form') ?>
+
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
         <?= Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary']) ?>

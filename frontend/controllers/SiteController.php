@@ -74,9 +74,49 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $this->layout = 'index';
         return $this->render('index');
     }
-
+    /**
+     * Displays teacherpage.
+     *
+     * @return mixed
+     */
+    public function actionTeacher()
+    {
+        $this->layout = 'index';
+        return $this->render('teacher');
+    }
+    /**
+     * Displays coursespage.
+     *
+     * @return mixed
+     */
+    public function actionCourses()
+    {
+        $this->layout = 'index';
+        return $this->render('courses');
+    }
+    /**
+     * Displays Pricingpage.
+     *
+     * @return mixed
+     */
+    public function actionPricing()
+    {
+        $this->layout = 'index';
+        return $this->render('pricing');
+    }
+    /**
+     * Displays Blogpage.
+     *
+     * @return mixed
+     */
+    public function actionBlog()
+    {
+        $this->layout = 'index';
+        return $this->render('blog');
+    }
     /**
      * Logs in a user.
      *
@@ -84,13 +124,14 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
+        $this->layout = 'login';
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+            return $this->redirect(['students/dashboard']);
         } else {
             $model->password = '';
 
@@ -129,6 +170,7 @@ class SiteController extends Controller
 
             return $this->refresh();
         } else {
+            $this->layout = 'index';
             return $this->render('contact', [
                 'model' => $model,
             ]);
@@ -142,6 +184,7 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
+        $this->layout = 'index';
         return $this->render('about');
     }
 
@@ -152,10 +195,11 @@ class SiteController extends Controller
      */
     public function actionSignup()
     {
+        $this->layout = 'login';
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post()) && $model->signup()) {
             Yii::$app->session->setFlash('success', 'Thank you for registration. Please check your inbox for verification email.');
-            return $this->goHome();
+            return $this->redirect(['students/dashboard']);
         }
 
         return $this->render('signup', [
@@ -170,6 +214,7 @@ class SiteController extends Controller
      */
     public function actionRequestPasswordReset()
     {
+        $this->layout = 'login';
         $model = new PasswordResetRequestForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail()) {
@@ -244,6 +289,7 @@ class SiteController extends Controller
      */
     public function actionResendVerificationEmail()
     {
+        $this->layout = 'login';
         $model = new ResendVerificationEmailForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail()) {

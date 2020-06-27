@@ -16,6 +16,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'admissionNumber')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'birthCertificateNumber')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'form')->textInput(['maxlength' => true]) ?>
+
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>

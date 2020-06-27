@@ -32,7 +32,7 @@ $examArray = ArrayHelper::map($examArray, 'examId', 'examName')
     <?= $form->field($model, 'subjectId')->dropDownList($subjectArray,['prompt'=>'Select subject']); ?>
 
     <?= $form->field($model, 'examId')->dropDownList($examArray,['prompt'=>'Select exam']); ?>
-
+    
     <?= $form->field($model, 'totalMarks')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">

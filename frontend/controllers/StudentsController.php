@@ -38,11 +38,19 @@ class StudentsController extends Controller
         $searchModel = new StudentsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
+        
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
+    
+    public function actionDashboard()
+    {
+        
+        return $this->render('dashboard');
+    }
+    
 
     /**
      * Displays a single Students model.

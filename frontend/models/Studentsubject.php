@@ -41,9 +41,9 @@ class Studentsubject extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'studentssubjectId' => 'Studentssubject',
-            'studentId' => 'Student',
-            'subjectId' => 'Subject',
+            'studentssubjectId' => 'Studentssubject ID',
+            'studentId' => 'Student ID',
+            'subjectId' => 'Subject ID',
         ];
     }
 

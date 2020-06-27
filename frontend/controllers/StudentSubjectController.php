@@ -38,6 +38,7 @@ class StudentSubjectController extends Controller
         $searchModel = new StudentSubjectSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
+       
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
